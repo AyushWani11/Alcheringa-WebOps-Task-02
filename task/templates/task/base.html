@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Web-Ops Task 1</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/d7283e3859.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="{% static 'task/nav.css' %}" />
+		<link rel="stylesheet" href="{% static 'task/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'task/sidebar.css' %}" />
+
+		<script src="{% static 'task/scripts/script.js' %}"></script>
+	</head>
+	<body>
+		<nav>
+			<div style="display: flex">
+				<div class="nav-icons" id="menu-icon">
+					<i class="fa-solid fa-bars"></i> <span>Menu</span>
+				</div>
+				<a href="#">
+					<div class="nav-icons">
+						<i class="fa-solid fa-house"></i> <span>Home</span>
+					</div>
+				</a>
+				<div class="nav-icons addUserBtn">
+					<i class="fa-solid fa-plus"></i> <span>Add User</span>
+				</div>
+			</div>
+			<div
+				style="
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				"
+			>
+				<div class="nav-info">
+					<img src="{% static 'task/images/id.png' %}" alt="" /><span
+						>{{ loggedIn }}</span
+					>
+				</div>
+			</div>
+		</nav>
+		<div class="main-page">
+			<aside>
+				<div>
+					<div class="new-item">
+						<i class="fa-solid fa-plus fa-lg"></i>
+						<span>New Item</span>
+					</div>
+				</div>
+				<div class="menu-item">
+					<div class="menu-label">
+						<div>
+							<i class="fa-solid fa-border-none"></i>
+							Dashboard
+						</div>
+						<i class="fa-solid fa-angle-down"></i>
+					</div>
+					<div class="menu-content" id="application">
+						<div>Commerce</div>
+						<div>Analytics</div>
+						<div>Crypto</div>
+						<div>Help-Desk</div>
+						<div>monitoring</div>
+						<div>Fitness</div>
+					</div>
+				</div>
+
+				<div class="menu-item">
+					<div class="menu-label">
+						<div>
+							<i class="fa-solid fa-border-none"></i>
+							Application
+						</div>
+						<i class="fa-solid fa-angle-down"></i>
+					</div>
+					<div class="menu-content" id="application">
+						<div>Commerce</div>
+						<div>Analytics</div>
+						<div>Crypto</div>
+						<div>Help-Desk</div>
+						<div>monitoring</div>
+						<div>Fitness</div>
+					</div>
+				</div>
+				<div class="menu-item">
+					<div class="menu-label">
+						<div>
+							<i class="fa-solid fa-border-none"></i>
+							Elements
+						</div>
+						<i class="fa-solid fa-angle-down"></i>
+					</div>
+					<div class="menu-content" id="application">
+						<div>Commerce</div>
+						<div>Analytics</div>
+						<div>Crypto</div>
+						<div>Help-Desk</div>
+						<div>monitoring</div>
+						<div>Fitness</div>
+					</div>
+				</div>
+			</aside>
+			{% block content %} {% endblock content %}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+
+
+
+{% extends "task/base.html" %} {% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class="main">
+    <div class="user">
+        <h1>Welcome</h1>
+        <div class="profile">
+            <img src="{% static 'task/images/id.png' %}" alt="" />
+            <h1>{{ loggedIn }}</h1>
+        </div>
+    </div>
+    <div class="table-wrapper">
+        <div class="table">
+            <h2>Form Title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+                numquam itaque dolore possimus voluptatem.
+            </p>
+            <div class="danger {% if messages %}success{% endif %}">
+                <i class="fa-solid fa-circle-info fa-lg"> </i>
+                <span id="notif"
+                    >
+                    {% if messages %}
+                   
+                        {% for message in messages %}
+                           {{ message }}
+                        {% endfor %}
+                   {%else%}
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                {% endif %}</span
+                >
+            </div>
+           
+            <div class="grid-table">
+                <span class="table-header">Full Name</span
+                ><span class="table-header">Username</span
+                ><span class="table-header">Email Address</span
+                ><span class="table-header last-header">Settings</span>
+                {% for user in users %}
+                <span>{{ user.name }}</span>
+                <span>{{ user.username }}</span>
+                <span>{{ user.email }}</span>
+                <span class="last"><button  data-id="{{ user.id }}" 
+                    data-name="{{ user.name }}" 
+                    data-username="{{ user.username }}" 
+                    data-email="{{ user.email }}"
+                    class="updateBtn"><i class="fa-solid fa-user-pen"></i> Edit</button>
+                    <button  data-id="{{ user.id }}" 
+                    data-name="{{ user.name }}" 
+                    data-username="{{ user.username }}" 
+                    data-email="{{ user.email }}"
+                    class="deleteBtn"><i class="fa-solid fa-trash"></i> Delete</button></span>
+                {% endfor %}
+            </div>
+            <div id="add-user">
+                <div class="addUserBtn"><i class="fa-solid fa-plus"></i> <span>Add User</span></div>
+                
+            </div></div>
+           
+        </div>
+        
+    </div>
+   
+</div>
+<div id="addUserModal" class="modal">
+    <div class="modal-content">
+        <h1>Add Member</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="user_key" id="id_user_key">
+            {{ form|crispy }}
+                <div class="form-buttons">
+                    <button type='button' class="close">Cancel</button>
+                    <button type="submit" name="submit_btn" value="confirm" class="submit">Confirm</button>
+                </div>
+        </form>
+</div>
+
+
+</div>
+
+
+<div id="deleteUserModal" class="modal">
+    <div class="modal-content">
+        <h1>Confirm Deletion</h1>
+        <p>Are you sure you want to delete the user <strong id="deleteUserName"></strong>?</p>
+        <form method="POST" id="deleteForm">
+            {% csrf_token %}
+            <input type="hidden" name="del_key" id="id_del_key">
+            <div class="form-buttons">
+                <button type="button" class="close">Cancel</button>
+                <button type="submit" class="submit">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,354 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+}
+
+p {
+	margin: 5px 0px;
+}
+
+.main-page {
+	display: flex;
+	padding-top: 55px;
+	z-index: 1;
+}
+
+.main {
+	width: 100%;
+	transition: margin ease 0.7s;
+}
+
+.main.active {
+	margin-left: 300px;
+}
+
+.user h1 {
+	margin: 0;
+	font-weight: lighter;
+	font-size: 3em;
+}
+
+.user {
+	background-color: white;
+	padding: 50px;
+	padding-bottom: 20px;
+}
+
+.profile {
+	padding: 10px 0px;
+	display: flex;
+	align-items: center;
+}
+
+.profile img {
+	transition: height 0.2s ease;
+	height: 200px;
+	border-radius: 100px;
+}
+
+.profile h1 {
+	margin: 30px;
+}
+
+.table-wrapper {
+	background-color: rgb(235, 235, 235);
+}
+
+.table {
+	padding: 10px 30px;
+	margin: 0px 30px;
+	background-color: white;
+}
+
+.table > p {
+	color: rgb(90, 90, 90);
+}
+
+.danger {
+	margin: 20px 0px;
+	padding: 10px;
+	background-color: rgba(255, 0, 0, 0.103);
+	border-radius: 5px;
+	border: 1px solid red;
+	color: rgb(113, 0, 0);
+}
+
+.danger.success {
+	border: 1px solid green;
+	color: rgb(0, 113, 30);
+	background-color: rgba(0, 255, 42, 0.103);
+}
+
+.danger.warning {
+	border: 1px solid rgb(255, 234, 0);
+	color: rgb(111, 113, 0);
+	background-color: rgba(238, 255, 0, 0.103);
+}
+
+.danger span {
+	margin: 0px 10px;
+}
+
+.grid-table {
+	display: grid;
+	border-radius: 5px;
+	width: 100%;
+	grid-template-columns: 1.1fr 0.9fr 1.1fr 0.9fr;
+	overflow: hidden;
+}
+
+.grid-table span {
+	padding: 10px;
+}
+
+.grid-table > span {
+	padding: 10px 20px;
+	border: 1px solid rgb(230, 230, 230);
+	font-size: large;
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+.dark {
+	background-color: rgb(242, 242, 242);
+}
+
+.row-even {
+	background-color: rgb(242, 242, 242);
+}
+
+.table-header {
+	background-color: rgb(200, 199, 199);
+	font-weight: bold;
+}
+
+.updateBtn {
+	margin-right: 10px;
+	border: none;
+	background-color: blue;
+	color: white;
+	padding: 5px 10px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deleteBtn {
+	border: none;
+	background-color: rgb(230, 128, 3);
+	color: rgb(255, 255, 255);
+	padding: 5px 10px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deleteBtn:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 5px rgb(230, 128, 3);
+	transform: scale(1.05);
+}
+
+.updateBtn:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 5px blue;
+	transform: scale(1.05);
+}
+
+.addUserBtn:hover {
+	cursor: pointer;
+}
+
+#add-user {
+	margin: 10px;
+	display: flex;
+	justify-content: end;
+}
+
+#add-user div {
+	background-color: rgb(230, 128, 3);
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+	transition: transform ease 0.2s;
+}
+
+#add-user div:hover {
+	background-color: rgb(230, 128, 3);
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+	transform: scale(1.05);
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.6);
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 5% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 450px;
+	position: relative;
+	border-radius: 10px;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+}
+
+.modal-content h1 {
+	margin-bottom: 30px;
+}
+
+.form-group {
+	margin: 20px 5px;
+	font-size: 1.1em;
+	color: #3c3c3c;
+}
+
+.asteriskField {
+	display: none;
+}
+
+.form-control {
+	color: #aaa;
+	margin-top: 5px;
+	width: 100%;
+	height: 35px;
+	border-radius: 5px;
+	border: 1px solid grey;
+	padding-left: 15px;
+}
+
+.form-buttons {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.form-buttons button {
+	width: 48%;
+	margin: 0px 10px;
+	border-radius: 5px;
+	border: none;
+	font-size: small;
+	height: 35px;
+	font-weight: bold;
+	color: aliceblue;
+	transition: transform ease 0.2s, box-shadow ease 0.2s;
+}
+
+.form-buttons button:hover {
+	transform: scale(1.05);
+	color: aliceblue;
+	cursor: pointer;
+	box-shadow: 0px 0px 5px black;
+}
+
+.close {
+	background-color: blue;
+}
+
+.submit {
+	background-color: rgb(230, 128, 3);
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1150px) {
+	.grid-table {
+		grid-template-columns: 0.8fr 0.5fr 1fr 0.8fr;
+	}
+	.grid-table > span {
+		font-size: 1em;
+	}
+	.main.active {
+		margin-left: 250px;
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	.grid-table {
+		grid-template-columns: 0.8fr 0.4fr 1fr 0.8fr;
+	}
+	.grid-table > span {
+		font-size: 1em;
+		word-wrap: break-word;
+		white-space: normal;
+	}
+	.main.active {
+		margin-top: 297px;
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.grid-table {
+		grid-template-columns: repeat(3, 33.33%);
+		word-wrap: break-word;
+		white-space: normal;
+	}
+
+	.main-page {
+		font-size: 0.7em;
+	}
+
+	.main.active {
+		margin-top: 297px;
+		margin-left: 0px;
+	}
+	.last {
+		grid-column: span 3;
+		text-align: center;
+	}
+	.last button {
+		transform: scale(0.9);
+	}
+	.last-header {
+		display: none;
+	}
+	.profile img {
+		height: 150px;
+		border-radius: 100px;
+	}
+	.user {
+		padding: 20px;
+		padding-bottom: 20px;
+	}
+	.table {
+		padding: 10px 10px;
+		margin: 0px 10px;
+		background-color: white;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.profile img {
+		height: 120px;
+		border-radius: 100px;
+	}
+	.last button {
+		transform: scale(0.8);
+	}
+}
